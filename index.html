@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body class="bg-image">
+    <nav class="navbar mt-3 shadow">
+        <div class="container-fluid  px-5">
+            <a class="navbar-brand text-uppercase text-light"
+                style="font-family: 'Luckiest Guy', cursive; font-size: 25px; text-shadow: 3px 3px rgba(0, 0, 0, 0.454);">Weather App</a>
+            <form class="d-flex" role="search">
+                <input value="Delhi,India" required class="bg-body-emphasis border-0 border-bottom rounded-0 text-light form-control me-2" type="search"
+                    placeholder="Enter City..." aria-label="Search">
+                <button class="btn btn-outline-light" type="submit">Search</button>
+            </form>
+        </div>
+    </nav>
+    <div class="container mt-5 d-flex justify-content-between">
+        <div class="section-1 w-50 text-light d-flex flex-column justify-content-between p-4">
+            <div class="d-flex justify-content-between px-4">
+                <h1 id="city">City Name</h1>
+                <span>
+                    <p id="currentdate">date</p>
+                    <p id="time">time</p>
+                    <p id="condition">condition</p>
+                </span>
+            </div>
+            <div class="d-flex justify-content-center px-4">
+                <span>
+                    <h2><span style="font-size:100px;" id="celcius">22°C</span></h2>
+                </span>
+            </div>
+            <div class="d-flex lw-temp justify-content-between px-4">
+                <p>lowest temp : <span id="lowest-temp" ></span>°C</p>
+                <p>highest temp : <span id="highest-temp"></span>°C</p>
+            </div>
+            <div class="div-resp d-flex justify-content-between px-5">
+                <span class="shadow p-2 bg-black bg-opacity-10 rounded-3">
+                    <p> feelslike = <span id="feelslike"></span></p>
+                    <p> sunrise = <span id="sunrise"></span></p>
+                    <p> sunset = <span id="sunset"></span></p>
+                </span>
+                <span class="shadow p-2 bg-black bg-opacity-10 rounded-3">
+                    <p>windspeed = <span id="windspeed"></span> </p>
+                    <p>cloud cover = <span id="cloudcover"></span></p>
+                    <p>visibility = <span id="visibility"></span></p>
+                </span>
+            </div>
+        </div>
+        <div id="section-2" class="section-2 w-50 p-3" style="border-left: 10px solid rgba(0, 0, 0, 0.105);">
+            <h1 class="text-light mb-4 text-center" style="font-family: 'Secular One', sans-serif;">Every Hour
+                Temperature</h1>
+            <ul id="ul-scroll" class="list-unstyled text-light overflow-y-scroll" style="height: 500px;">
+                <li class="d-flex justify-content-between px-4">
+                    <span>
+                        <p>12:00 AM<span id="time-1"></span></p>
+                        <p><span id="Temp-1"></span> °C </p>
+                    </span>
+                    <p><span id="icon-1"></span></p>
+                </li>
+                <li class="d-flex justify-content-between px-4">
+                    <span>
+                        <p>01:00 AM<span id="time-2"></span></p>
+                        <p><span id="Temp-2"></span> °C </p>
+                    </span>
+                    <p><span id="icon-2"></span></p>
+                </li>
+                <li class="d-flex justify-content-between px-4">
+                    <span>
+                        <p>02:00 AM<span id="time-3"></span></p>
+                        <p><span id="Temp-3"></span> °C </p>
+                    </span>
+                    <p><span id="icon-3"></span></p>
+                </li>
+                <li class="d-flex justify-content-between px-4">
+                    <span>
+                        <p>03:00 AM<span id="time-4"></span></p>
+                        <p><span id="Temp-4"></span> °C </p>
+                    </span>
+                    <p><span id="icon-4"></span></p>
+                </li>
+                <li class="d-flex justify-content-between px-4">
+                    <span>
+                        <p>04:00 AM<span id="time-5"></span></p>
+                        <p><span id="Temp-5"></span> °C </p>
+                    </span>
+                    <p><span id="icon-5"></span></p>
+                </li>
+                <li class="d-flex justify-content-between px-4">
+                    <span>
+                        <p>05:00 AM<span id="time-6"></span></p>
+                        <p><span id="Temp-6"></span> °C </p>
+                    </span>
+                    <p><span id="icon-6"></span></p>
+                </li>
+                <li class="d-flex justify-content-between px-4">
+                    <span>
+                        <p>06:00 AM<span id="time-7"></span></p>
+                        <p><span id="Temp-7"></span> °C </p>
+                    </span>
+                    <p><span id="icon-7"></span></p>
+                </li>
+                <li class="d-flex justify-content-between px-4">
+                    <span>
+                        <p>07:00 AM<span id="time-8"></span></p>
+                        <p><span id="Temp-8"></span> °C </p>
+                    </span>
+                    <p><span id="icon-8"></span></p>
+                </li>
+                <li class="d-flex justify-content-between px-4">
+                    <span>
+                        <p>08:00 AM<span id="time-9"></span></p>
+                        <p><span id="Temp-9"></span> °C </p>
+                    </span>
+                    <p><span id="icon-9"></span></p>
+                </li>
+                <li class="d-flex justify-content-between px-4">
+                    <span>
+                        <p>09:00 AM<span id="time-10"></span></p>
+                        <p><span id="Temp-10"></span> °C</p>
+                    </span>
+                    <p><span id="icon-10"></span></p>
+                </li>
+                <li class="d-flex justify-content-between px-4">
+                    <span>
+                        <p>10:00 AM<span id="time-11"></span></p>
+                        <p><span id="Temp-11"></span> °C</p>
+                    </span>
+                    <p><span id="icon-11"></span></p>
+                </li>
+                <li class="d-flex justify-content-between px-4">
+                    <span>
+                        <p>11:00 AM<span id="time-12"></span></p>
+                        <p><span id="Temp-12"></span> °C</p>
+                    </span>
+                    <p><span id="icon-12"></span></p>
+                </li>
+                <li class="d-flex justify-content-between px-4">
+                    <span>
+                        <p>12:00 PM<span id="time-13"></span></p>
+                        <p><span id="Temp-13"></span> °C</p>
+                    </span>
+                    <p><span id="icon-13"></span></p>
+                </li>
+                <li class="d-flex justify-content-between px-4">
+                    <span>
+                        <p>01:00 PM<span id="time-14"></span></p>
+                        <p><span id="Temp-14"></span> °C</p>
+                    </span>
+                    <p><span id="icon-14"></span></p>
+                </li>
+                <li class="d-flex justify-content-between px-4">
+                    <span>
+                        <p>02:00 PM<span id="time-15"></span></p>
+                        <p><span id="Temp-15"></span> °C</p>
+                    </span>
+                    <p><span id="icon-15"></span></p>
+                </li>
+                <li class="d-flex justify-content-between px-4">
+                    <span>
+                        <p>03:00 PM<span id="time-16"></span></p>
+                        <p><span id="Temp-16"></span> °C</p>
+                    </span>
+                    <p><span id="icon-16"></span></p>
+                </li>
+                <li class="d-flex justify-content-between px-4">
+                    <span>
+                        <p>04:00 PM<span id="time-17"></span></p>
+                        <p><span id="Temp-17"></span> °C</p>
+                    </span>
+                    <p><span id="icon-17"></span></p>
+                </li>
+                <li class="d-flex justify-content-between px-4">
+                    <span>
+                        <p>05:00 PM<span id="time-18"></span></p>
+                        <p><span id="Temp-18"></span> °C</p>
+                    </span>
+                    <p><span id="icon-18"></span></p>
+                </li>
+                <li class="d-flex justify-content-between px-4">
+                    <span>
+                        <p>06:00 PM<span id="time-19"></span></p>
+                        <p><span id="Temp-19"></span> °C</p>
+                    </span>
+                    <p><span id="icon-19"></span></p>
+                </li>
+                <li class="d-flex justify-content-between px-4">
+                    <span>
+                        <p>07:00 PM<span id="time-20"></span></p>
+                        <p><span id="Temp-20"></span> °C</p>
+                    </span>
+                    <p><span id="icon-20"></span></p>
+                </li>
+                <li class="d-flex justify-content-between px-4">
+                    <span>
+                        <p>08:00 PM<span id="time-21"></span></p>
+                        <p><span id="Temp-21"></span> °C</p>
+                    </span>
+                    <p><span id="icon-21"></span></p>
+                </li>
+                <li class="d-flex justify-content-between px-4">
+                    <span>
+                        <p>09:00 AM<span id="time-22"></span></p>
+                        <p><span id="Temp-22"></span> °C</p>
+                    </span>
+                    <p><span id="icon-22"></span></p>
+                </li>
+                <li class="d-flex justify-content-between px-4">
+                    <span>
+                        <p>10:00 PM<span id="time-23"></span></p>
+                        <p><span id="Temp-23"></span> °C</p>
+                    </span>
+                    <p><span id="icon-23"></span></p>
+                </li>
+                <li class="d-flex justify-content-between px-4">
+                    <span>
+                        <p>11:00 PM<span id="time-24"></span></p>
+                        <p><span id="Temp-24"></span> °C</p>
+                    </span>
+                    <p><span id="icon-24"></span></p>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="container-md mb-3 mt-4 px-5 rounded-4">
+        <h1 class="text-light" style="text-shadow:black 2px 2px; font-family: 'Secular One', sans-serif; letter-spacing: 1px;">Next 15 Days
+            Temperature</h1>
+        <ul id="ul-2-scroll" style="height: 200px;"
+            class="list-unstyled overflow-y-scroll flex-wrap text-light d-flex justify-content-around border-top py-3 ">
+            <!-- <li id="dayone"
+                style="border-radius: 10px; border: 2px solid rgba(0, 0, 0, 0.144); padding:10px 20px; margin-right:30px; margin-top: 15px; text-align: center;">
+                <p id="day-1">day</p>
+                <p id="temp-day-1">degree</p>
+                <p id="icon-day-1">cloudy</p>
+                <button type="button">btn</button>
+            </li> -->
+            <li id="dayOne"
+                style="border-radius: 10px; border: 2px solid rgba(0, 0, 0, 0.144); padding:10px 20px;  margin-top: 15px; text-align: center;">
+                <p id="day-2">day</p>
+                <p id="temp-day-2">degree</p>
+                <p id="icon-day-2">cloudy</p>
+                <button class="btn btn-success btn-sm" type="button">show more</button>
+            </li>
+            <li id="dayTwo"
+                style="border-radius: 10px; border: 2px solid rgba(0, 0, 0, 0.144); padding:10px 20px;  margin-top: 15px; text-align: center;">
+                <p id="day-3">day</p>
+                <p id="temp-day-3">degree</p>
+                <p id="icon-day-3">cloudy</p>
+                <button class="btn btn-success btn-sm" type="button">show more</button>
+            </li>
+            <li id="dayThree"
+                style="border-radius: 10px; border: 2px solid rgba(0, 0, 0, 0.144); padding:10px 20px;  margin-top: 15px; text-align: center;">
+                <p id="day-4">day</p>
+                <p id="temp-day-4">degree</p>
+                <p id="icon-day-4">cloudy</p>
+                <button class="btn btn-success btn-sm" type="button">show more</button>
+            </li>
+            <li id="dayFour"
+                style="border-radius: 10px; border: 2px solid rgba(0, 0, 0, 0.144); padding:10px 20px;  margin-top: 15px; text-align: center;">
+                <p id="day-5">day</p>
+                <p id="temp-day-5">degree</p>
+                <p id="icon-day-5">cloudy</p>
+                <button class="btn btn-success btn-sm" type="button">show more</button>
+            </li>
+            <li id="dayFive"
+                style="border-radius: 10px; border: 2px solid rgba(0, 0, 0, 0.144); padding:10px 20px;  margin-top: 15px; text-align: center;">
+                <p id="day-6">day</p>
+                <p id="temp-day-6">degree</p>
+                <p id="icon-day-6">cloudy</p>
+                <button class="btn btn-success btn-sm" type="button">show more</button>
+            </li>
+            <li id="daySix"
+                style="border-radius: 10px; border: 2px solid rgba(0, 0, 0, 0.144); padding:10px 20px;  margin-top: 15px; text-align: center;">
+                <p id="day-7">day</p>
+                <p id="temp-day-7">degree</p>
+                <p id="icon-day-7">cloudy</p>
+                <button class="btn btn-success btn-sm" type="button">show more</button>
+            </li>
+            <li id="daySeven"
+                style="border-radius: 10px; border: 2px solid rgba(0, 0, 0, 0.144); padding:10px 20px;  margin-top: 15px; text-align: center;">
+                <p id="day-8">day</p>
+                <p id="temp-day-8">degree</p>
+                <p id="icon-day-8">cloudy</p>
+                <button class="btn btn-success btn-sm" type="button">show more</button>
+            </li>
+            <li id="dayEight"
+                style="border-radius: 10px; border: 2px solid rgba(0, 0, 0, 0.144); padding:10px 20px;  margin-top: 15px; text-align: center;">
+                <p id="day-9">day</p>
+                <p id="temp-day-9">degree</p>
+                <p id="icon-day-9">cloudy</p>
+                <button class="btn btn-success btn-sm" type="button">show more</button>
+            </li>
+            <li id="dayNine"
+                style="border-radius: 10px; border: 2px solid rgba(0, 0, 0, 0.144); padding:10px 20px;  margin-top: 15px; text-align: center;">
+                <p id="day-10">day</p>
+                <p id="temp-day-10">degree</p>
+                <p id="icon-day-10">cloudy</p>
+                <button class="btn btn-success btn-sm" type="button">show more</button>
+            </li>
+            <li id="dayTen"
+                style="border-radius: 10px; border: 2px solid rgba(0, 0, 0, 0.144); padding:10px 20px;  margin-top: 15px; text-align: center;">
+                <p id="day-11">day</p>
+                <p id="temp-day-11">degree</p>
+                <p id="icon-day-11">cloudy</p>
+                <button class="btn btn-success btn-sm" type="button">show more</button>
+            </li>
+            <li id="dayEleven"
+                style="border-radius: 10px; border: 2px solid rgba(0, 0, 0, 0.144); padding:10px 20px;  margin-top: 15px; text-align: center;">
+                <p id="day-12">day</p>
+                <p id="temp-day-12">degree</p>
+                <p id="icon-day-12">cloudy</p>
+                <button class="btn btn-success btn-sm" type="button">show more</button>
+            </li>
+            <li id="dayTwelve"
+                style="border-radius: 10px; border: 2px solid rgba(0, 0, 0, 0.144); padding:10px 20px;  margin-top: 15px; text-align: center;">
+                <p id="day-13">day</p>
+                <p id="temp-day-13">degree</p>
+                <p id="icon-day-13">cloudy</p>
+                <button class="btn btn-success btn-sm" type="button">show more</button>
+            </li>
+            <li id="dayThirteen"
+                style="border-radius: 10px; border: 2px solid rgba(0, 0, 0, 0.144); padding:10px 20px;  margin-top: 15px; text-align: center;">
+                <p id="day-14">day</p>
+                <p id="temp-day-14">degree</p>
+                <p id="icon-day-14">cloudy</p>
+                <button class="btn btn-success btn-sm" type="button">show more</button>
+            </li>
+            <li id="dayFourteen"
+                style="border-radius: 10px; border: 2px solid rgba(0, 0, 0, 0.144); padding:10px 20px;  margin-top: 15px; text-align: center;">
+                <p id="day-15">day</p>
+                <p id="temp-day-15">degree</p>
+                <p id="icon-day-15">cloudy</p>
+                <button class="btn btn-success btn-sm" type="button">show more</button>
+            </li>
+        </ul>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+    <script src="./main.js"></script>
+</body>
+</html>
